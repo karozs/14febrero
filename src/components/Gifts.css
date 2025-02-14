@@ -1,0 +1,112 @@
+.gifts {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gifts-title {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: glow 2s infinite alternate;
+  }
+  
+  .gifts-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .gift-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .gift-item:hover {
+    box-shadow: 0px 6px 20px rgba(255, 165, 0, 0.5);
+    transform: scale(1.05);
+  }
+  
+  /* Íconos flotantes */
+  .floating-icons {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .floating-icon {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0;
+    animation: floatUp 4s linear infinite;
+  }
+  
+  /* Más posiciones para que se vea abundante */
+  .floating-icons .floating-icon:nth-child(1) { left: 5%; animation-delay: 0s; }
+  .floating-icons .floating-icon:nth-child(2) { left: 10%; animation-delay: 0.2s; }
+  .floating-icons .floating-icon:nth-child(3) { left: 15%; animation-delay: 0.4s; }
+  .floating-icons .floating-icon:nth-child(4) { left: 20%; animation-delay: 0.6s; }
+  .floating-icons .floating-icon:nth-child(5) { left: 25%; animation-delay: 0.8s; }
+  .floating-icons .floating-icon:nth-child(6) { left: 30%; animation-delay: 1s; }
+  .floating-icons .floating-icon:nth-child(7) { left: 35%; animation-delay: 1.2s; }
+  .floating-icons .floating-icon:nth-child(8) { left: 40%; animation-delay: 1.4s; }
+  .floating-icons .floating-icon:nth-child(9) { left: 45%; animation-delay: 1.6s; }
+  .floating-icons .floating-icon:nth-child(10) { left: 50%; animation-delay: 1.8s; }
+  .floating-icons .floating-icon:nth-child(11) { left: 55%; animation-delay: 2s; }
+  .floating-icons .floating-icon:nth-child(12) { left: 60%; animation-delay: 2.2s; }
+  .floating-icons .floating-icon:nth-child(13) { left: 65%; animation-delay: 2.4s; }
+  .floating-icons .floating-icon:nth-child(14) { left: 70%; animation-delay: 2.6s; }
+  .floating-icons .floating-icon:nth-child(15) { left: 75%; animation-delay: 2.8s; }
+  .floating-icons .floating-icon:nth-child(16) { left: 80%; animation-delay: 3s; }
+  .floating-icons .floating-icon:nth-child(17) { left: 85%; animation-delay: 3.2s; }
+  .floating-icons .floating-icon:nth-child(18) { left: 90%; animation-delay: 3.4s; }
+  .floating-icons .floating-icon:nth-child(19) { left: 95%; animation-delay: 3.6s; }
+  .floating-icons .floating-icon:nth-child(20) { left: 100%; animation-delay: 3.8s; }
+  
+  /* Animación más lenta y con mayor altura */
+  @keyframes floatUp {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-300px) scale(1.2);
+    }
+  }
+  
+  /* Efecto de resplandor en el título */
+  @keyframes glow {
+    from {
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+    }
+    to {
+      text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.9);
+    }
+  }
+  

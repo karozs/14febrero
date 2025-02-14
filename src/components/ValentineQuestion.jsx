@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import MainScreen from './MainScreen';
-import './ValentineQuestion.css'; // Nuevo archivo CSS para animaciones
 
 const ValentineQuestion = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [answered, setAnswered] = useState(false);
-  const [hearts, setHearts] = useState([]);
 
   const handleNoClick = () => {
     const newX = Math.random() * (window.innerWidth - 100);
@@ -14,34 +12,7 @@ const ValentineQuestion = () => {
   };
 
   const handleYesClick = () => {
-    setAnswered(true);
-    createHearts();
-    createFireworks();
-  };
-
-  const createHearts = () => {
-    const newHearts = [];
-    for (let i = 0; i < 50; i++) {
-      const heart = {
-        id: i,
-        style: {
-          left: Math.random() * window.innerWidth,
-          top: Math.random() * window.innerHeight,
-          animationDuration: `${Math.random() * 3 + 2}s`,
-        },
-      };
-      newHearts.push(heart);
-    }
-    setHearts(newHearts);
-  };
-
-  const createFireworks = () => {
-    const fireworksContainer = document.createElement('div');
-    fireworksContainer.className = 'fireworks';
-    document.body.appendChild(fireworksContainer);
-    setTimeout(() => {
-      document.body.removeChild(fireworksContainer);
-    }, 5000); // Duración de los fuegos artificiales
+    setAnswered(true); // Cambia el estado a true
   };
 
   return (
@@ -66,17 +37,8 @@ const ValentineQuestion = () => {
           </div>
         </>
       ) : (
-        <MainScreen />
+        <MainScreen /> // Renderiza MainScreen cuando answered es true
       )}
-      {hearts.map((heart) => (
-        <div
-          key={heart.id}
-          className="heart"
-          style={heart.style}
-        >
-          ❤️
-        </div>
-      ))}
     </div>
   );
 };
