@@ -1,5 +1,5 @@
-import React from 'react';
-import './Poems.css';
+import React, { useState } from "react";
+import "./Poems.css";
 
 const Poems = () => {
   const poems = [
@@ -24,15 +24,30 @@ const Poems = () => {
      y el tiempo se detiene en un abrazo eterno.`
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextPoem = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % poems.length);
+  };
+
+  const prevPoem = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? poems.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div className="poems">
       <h2 className="poems-title">🌹 Poemas de Amor 💖</h2>
-      <div className="poem-container">
-        {poems.map((poem, index) => (
-          <pre key={index} className="poem fade-in">
-            {poem}
-          </pre>
-        ))}
+      
+      <div className="poem-slider">
+        <button className="slider-btn left" onClick={prevPoem}>
+          ❮
+        </button>
+        <pre className="poem fade-in">{poems[currentIndex]}</pre>
+        <button className="slider-btn right" onClick={nextPoem}>
+          ❯
+        </button>
       </div>
     </div>
   );

@@ -3,8 +3,8 @@ import YouTube from "react-youtube";
 
 const MusicPlayer = () => {
   const musicList = [
-    { name: "Canción 1 (YouTube)", url: "ue0RP3C1Brg" },
-    { name: "Canción 2 (MP3)", url: "TYrcdhots80" },
+    { name: "Canción 1 (MP3)", url: "TYrcdhots80" },
+    { name: "Canción 2 (YouTube)", url: "ue0RP3C1Brg" },
     { name: "Canción 3 (MP3)", url: "Mxpy1CyXr6Q" },
   ];
 

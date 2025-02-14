@@ -5,6 +5,7 @@ import Gifts from "./Gifts";
 import Phrases from "./Phrases";
 import Poems from "./Poems";
 import "./MainScreen.css"; // Asegúrate de importar los estilos
+import profileImage from "../assets/profile.jpg"; // Importa la imagen
 
 const MainScreen = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -28,6 +29,9 @@ const MainScreen = () => {
 
   return (
     <div className="main-screen">
+      {/* Imagen circular */}
+      <img src={profileImage} alt="Foto especial" className="profile-image" />
+
       {/* Corazones flotando */}
       {hearts.map((heart) => (
         <FaHeart
@@ -40,8 +44,16 @@ const MainScreen = () => {
         />
       ))}
 
+      {/* Título principal */}
       <h1 className="main-title">💖 ¡Feliz 14 de Febrero! 💖</h1>
 
+      {/* Frase especial para la mejor enfermera */}
+      <p className="nurse-message">
+        👩‍⚕️ Eres la luz que sana con amor, la sonrisa que calma y el corazón que late por ayudar.  
+        ¡Gracias por ser la mejor enfermera y mi gran amor! 💕
+      </p>
+
+      {/* Botones de opciones */}
       <div className="options-container">
         <button onClick={() => setSelectedOption("music")} className="option-button">
           <FaMusic className="icon" /> Música
